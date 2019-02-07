@@ -2,7 +2,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+After git cloing you have to open two terminal/cmd inside in folder, 
+One  with: 
+npm install -g json-server
+json-server --watch db.json -p 3001 -d 2000
+
+Second with:
+### `npm install`
+### `npm start`
 
 ### `npm start`
 
