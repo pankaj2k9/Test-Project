@@ -6,8 +6,6 @@ import UserDetailComponent from './UserDetailComponent';
 import { fetchUsers } from '../redux/ActionCreators';
 import { Loading } from './LoadingComponent';
 
-
-
 const mapStateToProps = state => {
     return {
         users: state,
@@ -28,11 +26,9 @@ class MainComponent extends Component {
 
         const { users, isLoading, errMess } = this.props.users;
 
-
-
         const UserWithId = ({ match }) => {
             return (
-                <UserDetailComponent user={users.filter((user) => user.id === match.params.id)[0]}
+                <UserDetailComponent user={ users.filter((user) => user.id === match.params.id)[ 0 ] }
                 />
             );
         };
@@ -59,13 +55,12 @@ class MainComponent extends Component {
             return (
 
                 <Switch>
-                    <Route exact path='/' component={() => <UserListComponent users={users} />} />} />
-                    <Route exact path='/user' component={() => <UserListComponent users={users} />} />} />
-                    <Route path='/user/:id' component={UserWithId} />
+                    <Route exact path='/' component={ () => <UserListComponent users={ users } /> } />} />
+                    <Route exact path='/user' component={ () => <UserListComponent users={ users } /> } />} />
+                    <Route path='/user/:id' component={ UserWithId } />
                     <Redirect to="/" />
                 </Switch>
             );
-
 
     }
 }

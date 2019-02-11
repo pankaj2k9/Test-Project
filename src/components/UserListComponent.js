@@ -7,12 +7,12 @@ import {
 import { baseUrl } from '../shared/baseUrl';
 
 const RenderBlockUser = ({ user }) => {
-    let image = user["image-thumb"];
+    let image = user [ "image-thumb" ];
     return (
         <Card>
-            <CardImg top className="blocked-image" width="120px" height="120px" src={image} alt={user.name} />
+            <CardImg top className="blocked-image" width="120px" height="120px" src={ image } alt={ user.name } />
             <CardBody>
-                <Link to={`/user/${user.id}`} >
+                <Link to={ `/user/${ user.id }` } >
                     <CardTitle className="user-title">{user.name}</CardTitle>
                 </Link>
                 <CardSubtitle>{user.city}</CardSubtitle>
@@ -43,19 +43,18 @@ export default class UserListComponent extends Component {
         const value = target.value;
         const name = target.name;
         this.setState({
-            [name]: value
+            [ name ]: value
         }, () => {
             this.genderSwitcher();
         });
 
     }
 
-
     render() {
         let userList = this.state.usersList.map((user) => {
             return (
-                <div className="w-20" key={user.id}>
-                    <RenderBlockUser user={user} />
+                <div className="w-20" key={ user.id }>
+                    <RenderBlockUser user={ user } />
                 </div>
             );
         });
@@ -72,8 +71,8 @@ export default class UserListComponent extends Component {
                                     className="form-control"
                                     name="gender"
                                     id="exampleFormControlSelect1"
-                                    defaultValue={this.state.gender}
-                                    onChange={this.handleInputChange}>
+                                    defaultValue={ this.state.gender }
+                                    onChange={ this.handleInputChange }>
                                     <option value="Female"> Female</option>
                                     <option value="Male">Male</option>
                                 </select>

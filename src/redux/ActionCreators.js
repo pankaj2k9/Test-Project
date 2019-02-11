@@ -1,6 +1,19 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
+export const usersLoading = () => ({
+    type: ActionTypes.USERS_LOADING
+});
+
+export const usersFailed = (errmess) => ({
+    type: ActionTypes.USERS_FAILED,
+    payload: errmess
+});
+
+export const addUsers = (users) => ({
+    type: ActionTypes.ADD_USERS,
+    payload: users
+});
 export const fetchUsers = () => (dispatch) => {
 
     dispatch(usersLoading(true));
@@ -23,17 +36,3 @@ export const fetchUsers = () => (dispatch) => {
         .then(users => dispatch(addUsers(users)))
         .catch(error => dispatch(usersFailed(error.message)));
 }
-
-export const usersLoading = () => ({
-    type: ActionTypes.USERS_LOADING
-});
-
-export const usersFailed = (errmess) => ({
-    type: ActionTypes.USERS_FAILED,
-    payload: errmess
-});
-
-export const addUsers = (users) => ({
-    type: ActionTypes.ADD_USERS,
-    payload: users
-});

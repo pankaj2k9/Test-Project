@@ -24,13 +24,16 @@
 .blocked-image{
   max-width:120px;
   margin: 0px auto;
+  border-radius:10px;
 }
 .blocked-image:hover{
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
+.detailed-image{
+  max-height: 600px;
+}
 .user-title {
     font-weight: bold;
     font-size: 20px;

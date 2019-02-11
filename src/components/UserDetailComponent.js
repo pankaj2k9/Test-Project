@@ -6,13 +6,13 @@ import {
 import { Link } from 'react-router-dom';
 export default function UserDetailComponent({ user }) {
 
-    let image = user["image-thumb"];
+    const image = user[ 'image-thumb' ];
     return (
         <div className="container">
             <div className="row">
                 <div className="col-12">
                     <Card>
-                        <CardImg top width="100%" height="auto" src={image} alt={user.name} />
+                        <CardImg className="detailed-image" top width="100%" height="auto" src={ image } alt={ user.name } />
                         <CardBody>
                             <CardTitle className="user-title">{user.name}</CardTitle>
                             <CardSubtitle>City: {user.city}</CardSubtitle>
@@ -20,7 +20,7 @@ export default function UserDetailComponent({ user }) {
                                 Gender: {user.gender}<br />
                                 Age: {user.age}<br />
                             </CardText>
-                            <Link to={`/`} >
+                            <Link to={ '/' } >
                                 <Button>Back To Userlist</Button>
                             </Link>
                         </CardBody>
@@ -28,9 +28,7 @@ export default function UserDetailComponent({ user }) {
                 </div>
             </div>
 
-
         </div>
 
     )
 }
-
